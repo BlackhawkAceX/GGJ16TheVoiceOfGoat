@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='us-ascii'?>
+<theme_collection>
+	<themes>
+		<theme>
+			<name>Beach</name>
+			<src>blabla/bla</src>
+			<words>
+				<word>
+					<name>Sun</name>
+					<type>Subject</type>
+				</word>
+				<word>
+					<name>swim</name>
+					<type>Verb</type>
+				</word>
+			</words>
+		</theme>
+	</themes>
+</theme_collection>
