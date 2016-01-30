@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Word {
+public class Word : MonoBehaviour{
 
 	public enum Type {
 		VERB,

@@ -6,6 +6,7 @@ public class PlaceholderLogic : MonoBehaviour {
     // Use this for initialization
     bool occupationStatus;
     Word.Type pType;
+    Word word;
 
     void Start () {
        
@@ -22,5 +23,13 @@ public class PlaceholderLogic : MonoBehaviour {
     public bool isOccupied()
     {
         return occupationStatus;
+    }
+    public void setWord(GameObject word)
+    {
+        this.word = word.GetComponent<Word>();
+    }
+    public void clearWord()
+    {
+        word = null;
     }
 }

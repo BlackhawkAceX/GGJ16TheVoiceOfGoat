@@ -29,27 +29,30 @@ public class GameManagement : MonoBehaviour {
 
     public void setDraggedObject(GameObject obj)
     {
-        Debug.Log("got it");
         draggedObject = obj;
     }
     public void clearDraggedObject()
     {
+        compareDistanceToPlaceholders(draggedObject);
+        placeholder1.clearWord();
+        placeholder2.clearWord();
+        placeholder3.clearWord();
         draggedObject = null;
-        Debug.Log("cleared");
     }
-    public void compareDistanceToPlaceholders()
+    public void compareDistanceToPlaceholders(GameObject draggedObject)
     {
+        //Debug.Log(draggedObject.GetComponent<SpriteRenderer>);
         if (srPlaceholder1.bounds.Intersects(draggedObject.GetComponent<SpriteRenderer>().bounds))
         {
-
+            Debug.Log("intersects with placeholder1");
         }
         if (srPlaceholder2.bounds.Intersects(draggedObject.GetComponent<SpriteRenderer>().bounds))
         {
-
+            Debug.Log("intersects with placeholder2");
         }
         if (srPlaceholder3.bounds.Intersects(draggedObject.GetComponent<SpriteRenderer>().bounds))
         {
-
+            Debug.Log("intersects with placeholder3");
         }
     }
 }
