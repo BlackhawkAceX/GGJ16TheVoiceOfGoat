@@ -37,6 +37,7 @@ public class XmlReader : MonoBehaviour
     }
 	void LoadFile()
     {
+        /*
         TextAsset textAsset = (TextAsset)Resources.Load("testxml");
         XmlDocument xmlDoc = new XmlDocument();
         xmlDoc.LoadXml(textAsset.text);
@@ -85,7 +86,7 @@ public class XmlReader : MonoBehaviour
             }
             themecollection.Add(theme);
         }
-
+        */
         //themecollection[0].getName();  calls the name of the first theme
     }
 }
