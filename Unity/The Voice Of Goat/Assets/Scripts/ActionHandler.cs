@@ -14,11 +14,14 @@ public class ActionHandler : MonoBehaviour {
 	void Update () {
 	}
 
-	public int evaluateSentence(List<GameObject> slots)
+	public int evaluateSentence(List<PlaceholderLogic> placeholders)
 	{
-		int correctTypeCount;
-		foreach (GameObject slot in slots) {
-			Word word = slot.GetComponent<Word> ();
+		int correctTypeCount = 0;
+		foreach (PlaceholderLogic placeholder in placeholders) {
+			Word word = placeholder.GetComponent<Word> ();
+			if (placeholder.getType () == word.getType ())
+				correctTypeCount++;
 		}
+		return correctTypeCount;
 	}
 }

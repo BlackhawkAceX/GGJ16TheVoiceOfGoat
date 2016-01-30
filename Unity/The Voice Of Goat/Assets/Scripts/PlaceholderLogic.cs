@@ -32,4 +32,9 @@ public class PlaceholderLogic : MonoBehaviour {
     {
         word = null;
     }
+	public Word.Type getType()
+	{
+		return pType;
+	}
+
 }
