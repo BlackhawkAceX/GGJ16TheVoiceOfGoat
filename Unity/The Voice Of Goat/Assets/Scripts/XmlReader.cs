@@ -61,12 +61,11 @@ public class XmlReader : MonoBehaviour
                     theme.setName(themeItem.InnerText);
                 }
 
-                if (themeItem.Name == "src")
-                {
-                    theme.setSrc(themeItem.InnerText);
-                }
+//                if (themeItem.Name == "src")
+//                {
+//                    theme.setSrc(themeItem.InnerText);
+//                }
 
-                List<Word> words = new List<Word>();
                 XmlNodeList wordcollection = themeItem.ChildNodes;
 
                 foreach(XmlNode wordItem in wordcollection)
@@ -74,15 +73,23 @@ public class XmlReader : MonoBehaviour
                     Word word = new Word();
                     if(wordItem.Name == "name")
                     {
-                        word.setName(wordItem.InnerText);
+                        word.setText(wordItem.InnerText);
                     }
                     if(wordItem.Name == "type")
                     {
-                        word.setName(wordItem.InnerText);
+						string type = wordItem.InnerText;
+
+						if(type.Equals(Word.Type.ADJECTIVE.ToString()))
+							word.setType (Word.Type.ADJECTIVE);
+						else if(type.Equals(Word.Type.OBJECT.ToString()))
+							word.setType (Word.Type.OBJECT);
+						else if(type.Equals(Word.Type.VERB.ToString()))
+							word.setType (Word.Type.VERB);
+
                     }
-                    words.Add(word);
-                }
-                theme.addWords(words);
+					theme.addWord(word);
+				}
+   
             }
             themecollection.Add(theme);
         }

@@ -6,22 +6,43 @@ public class Theme {
 
 	[SerializeField]
 	private GameObject image;
+	private string name;
 
-	private List<Word> words;
+	private SortedList<Word.Type, int> types = new SortedList<Word.Type, int> ();
+	private Dictionary<Word, int> words = new Dictionary<Word, int> ();
 
-	public void addWords(List<Word> words)
-	{
-		this.words = words;
-	}
-
-	public List<Word> getWords()
-	{
-		return words;
-	}
-	
 	public GameObject getImage()
 	{
 		return image;
+	}
+
+	public void setName(string name)
+	{
+		this.name = name;
+	}
+
+	public string getName()
+	{
+		return name;
+	}
+
+	public void addWord(Word word, int value)
+	{
+		words.Add (words, value);
+	}
+
+	public int getWordValue(Word word)
+	{
+		return words [word];
+	}
+
+	public void addType(Word.Type type)
+	{
+		types.Add (type);
+	}
+
+	public SortedList<Word.Type, int> getTypes () {
+		return types;
 	}
 
 }

@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Word : MonoBehaviour{
+public class Word : MonoBehaviour {
 
 	public enum Type {
 		VERB,
@@ -19,14 +19,27 @@ public class Word : MonoBehaviour{
 		this.type = type;
 	}
 
+	public Word (){
+	}
+
 	public Word(string text, Type type, IDictionary<Word, int> associatedWords) {
 		new Word (text, type);
 		this.associatedWords = associatedWords;
 	}
 
+	public void setText(string text)
+	{
+		this.text = text;	
+	}
+
 	public string getText()
 	{
 		return text;	
+	}
+
+	public void setType(Type type)
+	{
+		this.type = type;	
 	}
 
 	public Type getType()
