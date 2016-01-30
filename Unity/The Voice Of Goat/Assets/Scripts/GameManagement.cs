@@ -12,9 +12,9 @@ public class GameManagement : MonoBehaviour {
     PlaceholderLogic placeholder2;
     PlaceholderLogic placeholder3;
 
-    SpriteRenderer srPlaceholder1;
-    SpriteRenderer srPlaceholder2;
-    SpriteRenderer srPlaceholder3;
+    BoxCollider2D srPlaceholder1;
+    BoxCollider2D srPlaceholder2;
+    BoxCollider2D srPlaceholder3;
 
     void Start()
     {
@@ -22,9 +22,9 @@ public class GameManagement : MonoBehaviour {
         placeholder2 = placeholderObj2.GetComponent<PlaceholderLogic>();
         placeholder3 = placeholderObj3.GetComponent<PlaceholderLogic>();
 
-        srPlaceholder1 = placeholderObj1.GetComponent<SpriteRenderer>();
-        srPlaceholder2 = placeholderObj2.GetComponent<SpriteRenderer>();
-        srPlaceholder3 = placeholderObj3.GetComponent<SpriteRenderer>();
+        srPlaceholder1 = placeholderObj1.GetComponent<BoxCollider2D>();
+        srPlaceholder2 = placeholderObj2.GetComponent<BoxCollider2D>();
+        srPlaceholder3 = placeholderObj3.GetComponent<BoxCollider2D>();
     }
 
     public void setDraggedObject(GameObject obj)
@@ -41,18 +41,20 @@ public class GameManagement : MonoBehaviour {
     }
     public void compareDistanceToPlaceholders(GameObject draggedObject)
     {
-        //Debug.Log(draggedObject.GetComponent<SpriteRenderer>);
-        if (srPlaceholder1.bounds.Intersects(draggedObject.GetComponent<SpriteRenderer>().bounds))
+        if (srPlaceholder1.bounds.Intersects(draggedObject.GetComponent<BoxCollider2D>().bounds))
         {
             Debug.Log("intersects with placeholder1");
+            draggedObject.transform.position = placeholderObj1.transform.position;
         }
-        if (srPlaceholder2.bounds.Intersects(draggedObject.GetComponent<SpriteRenderer>().bounds))
+        if (srPlaceholder2.bounds.Intersects(draggedObject.GetComponent<BoxCollider2D>().bounds))
         {
             Debug.Log("intersects with placeholder2");
+            draggedObject.transform.position = placeholderObj2.transform.position;
         }
-        if (srPlaceholder3.bounds.Intersects(draggedObject.GetComponent<SpriteRenderer>().bounds))
+        if (srPlaceholder3.bounds.Intersects(draggedObject.GetComponent<BoxCollider2D>().bounds))
         {
             Debug.Log("intersects with placeholder3");
+            draggedObject.transform.position = placeholderObj3.transform.position;
         }
     }
 }
