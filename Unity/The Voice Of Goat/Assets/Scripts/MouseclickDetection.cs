@@ -7,7 +7,7 @@ public class MouseclickDetection : MonoBehaviour {
 
     void Start()
     {
-        managementScript = gameManager.GetComponent<GameManagement>();
+        managementScript = GameObject.Find("GameManager").GetComponent<GameManagement>();
     }
     #if UNITY_STANDALONE_WIN
     void OnMouseDown()
