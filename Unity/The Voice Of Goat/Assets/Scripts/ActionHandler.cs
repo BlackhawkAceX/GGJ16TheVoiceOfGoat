@@ -17,11 +17,14 @@ public class ActionHandler : MonoBehaviour {
 	public int evaluateSentence(List<PlaceholderLogic> placeholders)
 	{
 		int correctTypeCount = 0;
+		int correctWordCount = 0;
 		foreach (PlaceholderLogic placeholder in placeholders) {
-			Word word = placeholder.GetComponent<Word> ();
+			Word word = placeholder.getWord ();
 			if (placeholder.getType () == word.getType ())
 				correctTypeCount++;
+			if (theme.getWordValue(word) != 0)
+				correctTypeCount++;
 		}
-		return correctTypeCount;
+		return correctTypeCount + correctWordCount;
 	}
 }

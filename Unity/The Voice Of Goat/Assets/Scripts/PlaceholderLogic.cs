@@ -20,6 +20,10 @@ public class PlaceholderLogic : MonoBehaviour {
     {
         pType = type;
     }
+	public void setOccupied(bool occupationStatus)
+	{
+		this.occupationStatus = occupationStatus;
+	}
     public bool isOccupied()
     {
         return occupationStatus;
@@ -37,4 +41,7 @@ public class PlaceholderLogic : MonoBehaviour {
 		return pType;
 	}
 
+	public Word getWord() {
+		return word;
+	}
 }

@@ -28,7 +28,7 @@ public class Theme {
 
 	public void addWord(Word word, int value)
 	{
-		words.Add (words, value);
+		words.Add (word, value);
 	}
 
 	public int getWordValue(Word word)
@@ -36,9 +36,9 @@ public class Theme {
 		return words [word];
 	}
 
-	public void addType(Word.Type type)
+	public void addType(Word.Type type, int value)
 	{
-		types.Add (type);
+		types.Add (type, value);
 	}
 
 	public SortedList<Word.Type, int> getTypes () {
