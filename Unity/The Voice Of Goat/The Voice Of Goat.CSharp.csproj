@@ -62,9 +62,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\ExitButton.cs" />
     <Compile Include="Assets\Scripts\GameManagement.cs" />
     <Compile Include="Assets\Scripts\MouseclickDetection.cs" />
+    <Compile Include="Assets\Scripts\MusicButton.cs" />
     <Compile Include="Assets\Scripts\PlaceholderLogic.cs" />
+    <Compile Include="Assets\Scripts\PlayButton.cs" />
+    <Compile Include="Assets\Scripts\SortingLayerExposer.cs" />
+    <Compile Include="Assets\Scripts\SoundButton.cs" />
     <Compile Include="Assets\Scripts\Theme.cs" />
     <Compile Include="Assets\Scripts\Word.cs" />
     <Compile Include="Assets\Scripts\XmlReader.cs" />
